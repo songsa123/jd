@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>		
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		a{text-decoration: none;}		
+		b{font-weight: 100;text-align: right;display: inline-block;width: 80px;}
+		.container{width: 700px;height: 500px;border: 1px solid #ccc;margin:50px auto;font-size: 14px;}
+		h2{font-size: 16px;line-height: 30px;text-align: center;color: coral;border-bottom: 5px solid coral;width: 500px;margin-left: 100px;}
+		form{width: 100%;padding:20px;margin-left: 20px;margin-left: 160px;}
+		form input{background: #fafafa;outline: none;border: 1px solid #e9e9e9;height: 20px;margin-left: 50px;}
+		form p{margin-top: 20px;}
+		form i{color: #E82B1A;}
+		form span{margin-left: 30px;font-size: 13px;display: none;color: #E82B1A;}
+		#btn{width: 100px;height: 30px;border: none;outline: none;background: #f47564;margin-top: 20px;margin-left: 100px;color: #fff;}
+		#p1{margin-left: 80px;}
+		::-webkit-input-placeholder{color: #ccc;}
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<h2>用户注册</h2>
+		<form action="http://www.jd.com">
+			<p>
+				<b>用户名：</b><input type="text" placeholder="请输入用户名" id="username" name=""><i>*</i><span></span>
+			</p>
+			<p>
+				<b>密码：</b><input type="password" placeholder="请输入密码" id="password" name=""><i>*</i><span></span>
+			</p>
+			<p>
+				<b>确认密码：</b><input type="password" placeholder="请输入确认密码" name=""><i>*</i><span></span>
+			</p>
+			<p>
+				<b>邮箱：</b><input type="text" placeholder="请输入邮箱" name=""><i>*</i><span></span>
+			</p>
+			<p>
+				<b>QQ：</b><input type="text" placeholder="请输入QQ号码" name=""><i>*</i><span></span>
+			</p>
+			<p>
+				<b>手机：</b><input type="text" placeholder="请输入手机号码" name=""><i>*</i><span></span>
+			</p>
+			<p>
+				<b>个人主页：</b><input type="text" placeholder="请输入个人主页URL" name=""><i>*</i><span></span>
+			</p>
+			<p><button id="btn">提交</button></p>
+			<p id="p1">已有账号？<a href="http://localhost/php-level2/myown/jd-register/login.html">立即登录</a></p>
+		</form>
+    </div>	
+    
+    
+    <script type="text/javascript">
+		window.onload = function(){
+            var oUser = document.getElementById("username");
+             var oPwd = document.getElementById("password");
+			var input = document.getElementsByTagName("input");
+			var span = document.getElementsByTagName("span");
+			var oBtn = document.getElementById("btn");	
+			var arr = [0,0,0,0,0,0,0];
+			input[0].onblur = function(){
+				var str = this.value;
+				if(str != ""){
+					var reg = /^[a-z0-9]{6,12}$/i;
+					if(reg.test(str)){
+						span[0].style.display = "none";
+						arr[0] = 1; 
+					}else{
+						span[0].innerText = "您输入的账号不合法";
+						span[0].style.display = "inline-block";
+						arr[0] = 2;
+					}
+				}				
+			};
+			
+			input[1].onblur = function(){
+				var str = this.value;
+				if(str != ""){
+					var reg = /^\w{6,18}$/;
+					if(reg.test(str)){
+						span[1].style.display = "none";
+						arr[1] = 1; 
+					}else{
+						span[1].innerText = "您输入的密码不合法";
+						span[1].style.display = "inline-block";
+						arr[1] = 2; 
+					}
+				}
+			};
+
+			input[2].onblur = function(){
+				var str = this.value;
+				if(str != "")
+				{
+					var str1 = input[1].value;
+					if(str === str1){
+						span[2].style.display = "none";
+						arr[2] = 1; 
+					}else{
+						span[2].innerText = "您输入的密码与上面不一致";
+						span[2].style.display = "inline-block";
+						arr[2] = 2; 
+					}
+				}
+				
+			};
+			
+			input[3].onblur = function(){
+				var str = this.value;
+				if(str != ""){
+					var reg = /^\w+@(126|163|qq)\.(com|cn)$/;
+					if(reg.test(str)){
+						span[3].style.display = "none";
+						arr[3] = 1; 
+					}else{
+						span[3].innerText = "您输入的邮箱格式不合法";
+						span[3].style.display = "inline-block";
+						arr[3] = 2; 
+					}
+				}
+				
+			};
+			
+			input[4].onblur = function(){
+				var str = this.value;
+				if(str != ""){
+					var reg = /^\d{8,12}$/;
+					if(reg.test(str)){
+						span[4].style.display = "none";
+						arr[4] = 1; 
+					}else{
+						span[4].innerText = "您输入的QQ号码格式不合法";
+						span[4].style.display = "inline-block";
+						arr[4]= 2; 
+					}
+				}
+				
+			};
+			
+			input[5].onblur = function(){
+				var str = this.value;
+				if(str != ""){
+					var reg = /^(156|158|188)\d{8}$/;
+					if(reg.test(str)){
+						span[5].style.display = "none";
+						arr[5] = 1; 
+					}else{
+						span[5].innerText = "您输入的手机号码格式不合法";
+						span[5].style.display = "inline-block";
+						arr[5] = 2; 
+					}
+				}
+				
+			};
+			
+			input[6].onblur = function(){
+				var str = this.value;
+				if(str != ""){
+					var reg = /^(http:\/\/).{5,}(\.com)$/;
+					if(reg.test(str)){
+						span[6].style.display = "none";
+						arr[6] = 1; 
+					}else{
+						span[6].innerText = "您输入的URL地址不合法";
+						span[6].style.display = "inline-block";
+						arr[6] = 2; 
+					}
+				}
+				
+			};
+			
+			oBtn.onclick = function(){
+				var num = arr[0] * arr[1] * arr[2] * arr[3] * arr[4] * arr[5] * arr[6];
+				if(num == 0){
+					alert("您未输入完");
+				}else if(num == 1){
+					alert("验证成功");
+				}else{
+					alert("您输入不合法");
+                }
+                
+                var url = "http://localhost/php-level2/myown/jd-register/php/register.php";
+                    ajaxPost(url,`username=${oUser.value}&password=${oPwd.value}&email=${input[3].value}&QQ=${input[4].value}&phone=${input[5].value}&person=${input[6].value}`)
+                    .then(function(res){
+                        console.log(res);
+                    })
+                };
+		}
+    </script>
+    <script src="ajax.js"></script>
+</body>
+</html>

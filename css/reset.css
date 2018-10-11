@@ -1,0 +1,6 @@
+*{margin: 0;padding: 0;}
+body{font-family: "微软雅黑";}
+ul,li{list-style: none;}
+a,a:hover{text-decoration: none;}
+h1,h2,h3,h4,b,em,i,strong,u{font-weight:normal;font-style: normal;text-decoration: none;}
+.clearfix:after{content:"" ;clear: both;height: 0;display: block;overflow: hidden;visibility: hidden;}

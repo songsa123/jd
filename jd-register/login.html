@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .wrap{
+            width: 350px;
+            /* height: 370px; */
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+        .title{
+            font-size: 17px;
+            height: 17px;
+            line-height: 17px;
+            margin-bottom: 18px;
+            display: flex;
+            padding: 0 50px;
+            justify-content: space-between;
+        }
+        .title p:nth-child(1){
+            color: #666666;
+            
+        }
+        .title p:nth-child(2){
+            color: #e4393c;
+            font-weight: bold;
+        }
+        #login{
+            padding:15px 20px 0;
+            border-top: 1px solid #f4f4f4;
+            overflow: hidden;
+        }
+        #login input{
+            height: 38px;
+            outline: none;
+            line-height: 38px;
+            font-size: 14px;
+            color: #d4d4d4;
+            margin-top: 20px;
+            float: left;
+            border: none;
+            border:1px solid #bdbdbd;
+            width: 253px;
+            padding-left: 12px;
+        }
+        #login p{
+            float: left;
+            width: 38px;
+            height: 38px;
+           
+            margin-top: 20px;
+            border: 1px solid #bdbdbd;
+            border-right: none;
+
+        }
+        #login p:nth-child(1){
+            background:#f4f4f4 url(img/user.png)no-repeat center;
+            
+         }
+         #login p:nth-child(3){
+            background:#f4f4f4 url(img/pwd.png)no-repeat center;
+            
+         }
+        .forget{
+            width: 305px;
+            height: 58px;
+            line-height: 58px;
+            padding: 0 20px;
+        }
+        .forget a{
+            font-size: 12px;
+            color:#666666;
+            float: right;
+        }
+        #login1{
+            margin: 0 20px;
+            width: 305px;
+            height: 35px;
+            background: #e4393c;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            border: none;
+            letter-spacing: 25px;
+            margin-bottom: 30px;
+            outline: none;
+        }
+        ul{
+            height: 52px;
+            width: 305px;
+            border-top: 1px solid #fcfcfc;
+            padding:0 20px;
+        }
+        ul li{
+            float: left;
+            
+            height: 18px;
+            line-height: 18px;
+        }
+        ul li a{
+            font-size: 10px;
+            color: #666666;
+            padding-left: 24px;
+            display: block;
+            height: 10px;
+            line-height: 10px;
+            margin-top: 5px
+        }
+        ul li:nth-child(3) a{
+            color: #e4393c;
+            font-size: 17px;
+        }
+        ul li:nth-child(1) a{
+            border-right: 1px solid #666;
+            padding-right: 14px;
+            
+        }
+        ul li:nth-child(1){
+            background: url(img/qq.png) no-repeat left center;
+            margin-right: 10px
+           
+        }
+        ul li:nth-child(2){
+            background: url(img/wei.png) no-repeat left center;
+           
+        }
+        ul li:nth-child(3){
+            float:right;
+            background: url(img/go.png) no-repeat left center;
+            
+        }
+        a:hover{
+            color: #e4393c;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">
+            <p>扫码登录</p>
+            <p>账户登录</p>
+        </div>
+        <form action="http://www.jd.com">
+        <div id="login">
+            <p></p><input type="text" id="username"  placeholder="邮箱/用户名/已验证手机" name="">
+            <p></p><input type="password" id="password" placeholder="密码" name="">
+        </div>
+            <p class="forget"><a href="#">忘记密码</a></p>
+            <button id="login1">登录</button>
+    </form>
+            <ul>
+                <li><a href="#">QQ</a></li>
+                <li><a href="#">微信</a></li>
+                <li><a href="http://localhost/php-level2/myown/jd-register/zhuce.html">立即注册</a></li> 
+            </ul>
+        
+    </div>
+    <script src="ajax.js"></script> 
+    <script>
+        var oBtn=document.getElementById("login1");
+        var oUser=document.getElementById("username");
+        var oPwd=document.getElementById("password");
+        oBtn.onclick=function(){
+            url="http://localhost/php-level2/myown/jd-register/php/login.php";
+            ajaxPost(url,`username=${oUser.value}&password=${oPwd.value}`)
+            .then(function(res){
+                console.log(res)
+            })
+          
+        }
+        // window.open("");
+
+
+    </script>
+</body>
+</html>

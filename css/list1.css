@@ -1,0 +1,120 @@
+/* 二级菜单1 */
+.list {
+    position: relative;
+}
+.list-1{
+    width: 998px;
+    height: 485px;
+    background: #fff;
+    border: 1px solid #ddd;
+    position: absolute;
+    left: 190px;
+    top: 0;
+    padding: 20px 0 0 20px;
+    display: none;
+    z-index: 110;
+    /* opacity: 0; */
+
+}
+.list-1 img:hover{
+    opacity: 0.8;
+}
+.list li:hover .list-1{
+    display:block;
+    /* opacity: 1; */
+}
+.list-1-left{
+    width: 795px;
+    float: left;
+}
+.list-1-top{
+    height: 22px;
+}
+.list-1-top p{
+    /* width: 62px; */
+    height: 22px;
+    background: #333;
+    float: left;
+    margin-right: 14px;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 22px;
+    color: #fff;
+    /*  */
+}
+.list-1 span{
+    color: #898989;
+} 
+.list-1-top span{
+    color: #fff
+}
+
+.list .list-1 .list-1-top p a{
+    color: #fff;
+    margin-right: 7px;
+}
+.list-1-top p:hover{
+    opacity: 0.8;
+}
+.list-1-top p:hover a{
+    color: #fff;
+}
+.list-1-cona{
+    height: 16px;
+    padding-top: 17px;
+}
+.list-1-left li{
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    border-right: 1px solid #cdcdcd;
+    padding-right: 10px;
+    margin-left: 10px; 
+}
+.list-1-left li:nth-child(1){
+    width:65px;
+    margin-left: 0;
+    text-align: center;
+    padding-right: 14px;
+    color: #cdcdcd;
+
+}
+.list-1-cona li:nth-child(1) a{
+    margin-right: 7px;
+}
+.list-1-cona li:last-child{
+    border: none;
+}
+.list-1-cona li a{
+    font-size: 12px;
+    color: #898989;
+}
+.list-1-cona li:hover{
+    background:none;
+}
+.list-1-right{
+    width: 169px;
+    float: left;
+}
+.list-1-right .right-top{
+    width: 169px;
+    height: 140px;
+}
+.list-1-right .right-top img{
+    display: block;
+    width: 84px;
+    height: 35px;
+    float: left;
+    margin-bottom: 1px;
+}
+.list-1-right .right-top img:nth-child(odd){
+    margin-right: 1px;
+}
+.list-1-right .right-bottom{
+    width: 168px;
+    margin-top: 10px;
+}
+.list-1-right .right-bottom img{
+    display: block;
+    width: 100%;
+}
